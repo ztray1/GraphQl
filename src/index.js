@@ -1,4 +1,4 @@
-import "@babel/polyfill";
+import "@babel/polyfill/noConflict.js";
 import {GraphQLServer,PubSub} from "graphql-yoga";
 import db from "./db.js";
 import prisma from "./prsima.js";

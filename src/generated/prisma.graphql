@@ -1,5 +1,5 @@
 # source: http://localhost:4466
-# timestamp: Thu Jan 28 2021 23:11:32 GMT-0500 (Eastern Standard Time)
+# timestamp: Sat Jan 30 2021 20:20:01 GMT-0500 (Eastern Standard Time)
 
 type AggregateComment {
   count: Int!
@@ -40,8 +40,6 @@ type CommentConnection {
 input CommentCreateInput {
   id: ID
   text: String!
-  updatedAt: DateTime!
-  createdAt: DateTime!
   author: UserCreateOneWithoutCommentsInput!
   post: PostCreateOneWithoutCommentsInput!
 }
@@ -59,16 +57,12 @@ input CommentCreateManyWithoutPostInput {
 input CommentCreateWithoutAuthorInput {
   id: ID
   text: String!
-  updatedAt: DateTime!
-  createdAt: DateTime!
   post: PostCreateOneWithoutCommentsInput!
 }
 
 input CommentCreateWithoutPostInput {
   id: ID
   text: String!
-  updatedAt: DateTime!
-  createdAt: DateTime!
   author: UserCreateOneWithoutCommentsInput!
 }
 
@@ -275,22 +269,16 @@ input CommentSubscriptionWhereInput {
 
 input CommentUpdateInput {
   text: String
-  updatedAt: DateTime
-  createdAt: DateTime
   author: UserUpdateOneRequiredWithoutCommentsInput
   post: PostUpdateOneRequiredWithoutCommentsInput
 }
 
 input CommentUpdateManyDataInput {
   text: String
-  updatedAt: DateTime
-  createdAt: DateTime
 }
 
 input CommentUpdateManyMutationInput {
   text: String
-  updatedAt: DateTime
-  createdAt: DateTime
 }
 
 input CommentUpdateManyWithoutAuthorInput {
@@ -324,15 +312,11 @@ input CommentUpdateManyWithWhereNestedInput {
 
 input CommentUpdateWithoutAuthorDataInput {
   text: String
-  updatedAt: DateTime
-  createdAt: DateTime
   post: PostUpdateOneRequiredWithoutCommentsInput
 }
 
 input CommentUpdateWithoutPostDataInput {
   text: String
-  updatedAt: DateTime
-  createdAt: DateTime
   author: UserUpdateOneRequiredWithoutCommentsInput
 }
 
@@ -585,8 +569,6 @@ input PostCreateInput {
   title: String!
   body: String!
   published: Boolean!
-  updatedAt: DateTime!
-  createdAt: DateTime!
   author: UserCreateOneWithoutPostsInput!
   comments: CommentCreateManyWithoutPostInput
 }
@@ -606,8 +588,6 @@ input PostCreateWithoutAuthorInput {
   title: String!
   body: String!
   published: Boolean!
-  updatedAt: DateTime!
-  createdAt: DateTime!
   comments: CommentCreateManyWithoutPostInput
 }
 
@@ -616,8 +596,6 @@ input PostCreateWithoutCommentsInput {
   title: String!
   body: String!
   published: Boolean!
-  updatedAt: DateTime!
-  createdAt: DateTime!
   author: UserCreateOneWithoutPostsInput!
 }
 
@@ -876,8 +854,6 @@ input PostUpdateInput {
   title: String
   body: String
   published: Boolean
-  updatedAt: DateTime
-  createdAt: DateTime
   author: UserUpdateOneRequiredWithoutPostsInput
   comments: CommentUpdateManyWithoutPostInput
 }
@@ -886,16 +862,12 @@ input PostUpdateManyDataInput {
   title: String
   body: String
   published: Boolean
-  updatedAt: DateTime
-  createdAt: DateTime
 }
 
 input PostUpdateManyMutationInput {
   title: String
   body: String
   published: Boolean
-  updatedAt: DateTime
-  createdAt: DateTime
 }
 
 input PostUpdateManyWithoutAuthorInput {
@@ -926,8 +898,6 @@ input PostUpdateWithoutAuthorDataInput {
   title: String
   body: String
   published: Boolean
-  updatedAt: DateTime
-  createdAt: DateTime
   comments: CommentUpdateManyWithoutPostInput
 }
 
@@ -935,8 +905,6 @@ input PostUpdateWithoutCommentsDataInput {
   title: String
   body: String
   published: Boolean
-  updatedAt: DateTime
-  createdAt: DateTime
   author: UserUpdateOneRequiredWithoutPostsInput
 }
 
@@ -1197,8 +1165,6 @@ input UserCreateInput {
   name: String!
   email: String!
   password: String!
-  updatedAt: DateTime!
-  createdAt: DateTime!
   posts: PostCreateManyWithoutAuthorInput
   comments: CommentCreateManyWithoutAuthorInput
 }
@@ -1218,8 +1184,6 @@ input UserCreateWithoutCommentsInput {
   name: String!
   email: String!
   password: String!
-  updatedAt: DateTime!
-  createdAt: DateTime!
   posts: PostCreateManyWithoutAuthorInput
 }
 
@@ -1228,8 +1192,6 @@ input UserCreateWithoutPostsInput {
   name: String!
   email: String!
   password: String!
-  updatedAt: DateTime!
-  createdAt: DateTime!
   comments: CommentCreateManyWithoutAuthorInput
 }
 
@@ -1309,8 +1271,6 @@ input UserUpdateInput {
   name: String
   email: String
   password: String
-  updatedAt: DateTime
-  createdAt: DateTime
   posts: PostUpdateManyWithoutAuthorInput
   comments: CommentUpdateManyWithoutAuthorInput
 }
@@ -1319,8 +1279,6 @@ input UserUpdateManyMutationInput {
   name: String
   email: String
   password: String
-  updatedAt: DateTime
-  createdAt: DateTime
 }
 
 input UserUpdateOneRequiredWithoutCommentsInput {
@@ -1341,8 +1299,6 @@ input UserUpdateWithoutCommentsDataInput {
   name: String
   email: String
   password: String
-  updatedAt: DateTime
-  createdAt: DateTime
   posts: PostUpdateManyWithoutAuthorInput
 }
 
@@ -1350,8 +1306,6 @@ input UserUpdateWithoutPostsDataInput {
   name: String
   email: String
   password: String
-  updatedAt: DateTime
-  createdAt: DateTime
   comments: CommentUpdateManyWithoutAuthorInput
 }
 

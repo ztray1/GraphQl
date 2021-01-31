@@ -8,7 +8,7 @@
     "heroku-postbuild": "babel src --out-dir dist --copy-files",
     "dev": "env-cmd ./config/dev.env nodemon src/index.js --ext js,graphql",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "get-schema": "graphql get-schema -p prisma"
+    "get-schema": "env-cmd ./config/dev.env graphql get-schema -p prisma"
   },
   "author": "",
   "license": "ISC",
