@@ -17,5 +17,4 @@ const resolvers={
 
 
 const fragmentReplacements=extractFragmentReplacements(resolvers);
-console.log(fragmentReplacements);
 export {resolvers,fragmentReplacements};

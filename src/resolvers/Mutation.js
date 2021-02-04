@@ -81,7 +81,6 @@ const Mutation={
     },
     async createPost(parent,args,{prisma,request},info){
         const userId=getUserId(request);
-        console.log(info);
         /*const post={
             id:uuidv4(),
             ...args.data
